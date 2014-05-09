@@ -1,0 +1,1 @@
+Click on a tile in the grid to place your game piece (X) on the board. But you will have to first answer the trivia question correctly! If you get it wrong, the (O) piece is placed instead. Get 3 X's in a row to win, but don't get 3 O's in a row, or you'll lose!

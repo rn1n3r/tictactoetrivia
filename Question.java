@@ -23,13 +23,13 @@ public class Question
 	
 	// choose which file to read based on category
 	if (category == 'w')
-	    fname = "World.txt";
+	    fname = "data/World.txt";
 	
 	else if (category == 'm')
-	    fname = "MoviesAndFood.txt";
+	    fname = "data/MoviesAndFood.txt";
 	
 	else
-	    fname = "Science.txt";
+	    fname = "data/Science.txt";
 	    
 	// File reader stuff
 	FileReader fr = new FileReader (fname);
