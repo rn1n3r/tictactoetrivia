@@ -62,7 +62,7 @@ public class Board extends JFrame
 	// Add buttons for answer choices to the prompt panel
 	for (int i = 0 ; i < 4 ; i++)
 	{
-	    choiceButtons [i] = new JButton (new ImageIcon ("img/button.png"));
+	    choiceButtons [i] = new JButton (new ImageIcon (getClass().getResource("img/button.png")));
 	    choiceButtons [i].setOpaque (false);
 	    choiceButtons [i].setContentAreaFilled (false);
 	    choiceButtons [i].setBorderPainted (false);
@@ -113,7 +113,7 @@ public class Board extends JFrame
 	for (int i = 0 ; i < 4 ; i++)
 	{
 	    prompt.remove (choiceButtons [i]);
-	    choiceButtons [i] = new JButton (new ImageIcon ("img/button.png"));
+	    choiceButtons [i] = new JButton (new ImageIcon (getClass().getResource("img/button.png")));
 	    choiceButtons [i].setOpaque (false);
 	    choiceButtons [i].setContentAreaFilled (false);
 	    choiceButtons [i].setBorderPainted (false);
@@ -166,7 +166,7 @@ public class Board extends JFrame
 		for (int i = 0 ; i < 4 ; i++)
 		{
 		    prompt.remove (choiceButtons [i]);
-		    choiceButtons [i] = new JButton (q.choices [i], new ImageIcon ("img/button.png")); // add pictures
+		    choiceButtons [i] = new JButton (q.choices [i], new ImageIcon (getClass().getResource("img/button.png"))); // add pictures
 		    choiceButtons [i].setFont (new Font ("Segoe UI", Font.PLAIN, 24)); // set font
 		    choiceButtons [i].setHorizontalTextPosition (SwingConstants.CENTER);
 		    choiceButtons [i].setOpaque (false);
@@ -250,7 +250,7 @@ public class Board extends JFrame
 
 		if (q.checkAnswer (answer)) // If the answer is correct
 		{
-		    ((JButton) t.getSource ()).setIcon (new ImageIcon ("img/x.png"));
+		    ((JButton) t.getSource ()).setIcon (new ImageIcon (getClass().getResource("img/x.png")));
 
 		    // Add the position to the array
 		    for (int i = 0 ; i < 9 ; i++)
@@ -258,7 +258,7 @@ public class Board extends JFrame
 			if (t.getSource ().equals (tiles [i]))
 			    added [i] = i + 1;
 		    }
-		    ((JButton) e.getSource ()).setIcon (new ImageIcon ("img/winButton.png"));
+		    ((JButton) e.getSource ()).setIcon (new ImageIcon (getClass().getResource("img/winButton.png")));
 		    ((JButton) e.getSource ()).setForeground (new Color (34, 177, 76));
 		    ((JButton) e.getSource ()).setText ("CORRECT!");
 
@@ -270,7 +270,9 @@ public class Board extends JFrame
 		    for (int i = 0 ; i < 8 ; i++)
 		    {
 			if (added [winCombo [i] [0] - 1] != 0 && added [winCombo [i] [1] - 1] != 0 && added [winCombo [i] [2] - 1] != 0)
+			    
 			    win = true; //
+			    
 
 		    }
 		    
@@ -290,7 +292,7 @@ public class Board extends JFrame
 		else // If the answer is incorrect
 		{
 
-		    ((JButton) t.getSource ()).setIcon (new ImageIcon ("img/o.png"));
+		    ((JButton) t.getSource ()).setIcon (new ImageIcon (getClass().getResource("img/o.png")));
 
 
 		    // Add the position to the opposite array
@@ -323,7 +325,7 @@ public class Board extends JFrame
 		    }
 		    else
 		    {
-			((JButton) e.getSource ()).setIcon (new ImageIcon ("img/loseButton.png"));
+			((JButton) e.getSource ()).setIcon (new ImageIcon (getClass().getResource("img/loseButton.png")));
 			((JButton) e.getSource ()).setForeground (new Color (237, 28, 36));
 			((JButton) e.getSource ()).setText ("INCORRECT!");
 		    }

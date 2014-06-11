@@ -13,7 +13,7 @@ public class ImagePanel extends JPanel
 	super();
 	try
 	{
-	    image = ImageIO.read(new File(filePath));
+	    image = ImageIO.read(ImagePanel.class.getResource(filePath));
 	}
 	catch (IOException e)
 	{}

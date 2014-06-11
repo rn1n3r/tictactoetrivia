@@ -20,13 +20,9 @@ public class Game implements ActionListener
     {
 	InputStream in = null; // Readinput stream  for audio
 
-	try
-	{
-	    in = new FileInputStream (new File (audioname)); // for importing Files into FileInputStream
-	}
-	catch (FileNotFoundException e)
-	{
-	}
+       
+	    in = Game.class.getResourceAsStream(audioname); // for importing Files into FileInputStream
+       
 	try
 	{
 	    as = new AudioStream (in);
@@ -54,8 +50,8 @@ public class Game implements ActionListener
 	try 
 	{
 	// File reader stuff
-	FileReader fr = new FileReader ("data/instructions.txt");
-	BufferedReader filein = new BufferedReader (fr);
+	InputStream in = Game.class.getResourceAsStream("data/instructions.txt");
+	BufferedReader filein = new BufferedReader (new InputStreamReader(in));
 	
 	curr = filein.readLine();
 	

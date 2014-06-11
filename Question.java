@@ -32,8 +32,8 @@ public class Question
 	    fname = "data/Science.txt";
 	    
 	// File reader stuff
-	FileReader fr = new FileReader (fname);
-	BufferedReader filein = new BufferedReader (fr);
+	InputStream in = getClass().getResourceAsStream(fname);
+	BufferedReader filein = new BufferedReader (new InputStreamReader(in));
 	
 	String line = filein.readLine();
 
